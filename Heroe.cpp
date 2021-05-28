@@ -25,12 +25,43 @@ void Heroe::increaseHP(int p)
 	 this->healthPoints += p;
 }
 
-void Heroe::attack(double p)
+void Heroe::attack()
 {
-	this->healthPoints -= p;
+	this->healthPoints -= this->attackPoints;
+	this->numOfAttacks++;
+	this->upgradeLevel();
 }
 
-void Heroe::deffend(double p)
+void Heroe::deffend()
 {
-	this->attackPoints -= p;
+	this->attackPoints -= (this->healthPoints/15);
+	this->numOfDeffenses++;
+	this->downgradeLevel();
+}
+
+void Heroe::upgradeLevel()
+{
+	if(this->numOfAttacks == 7)
+	{
+		this->healthPoints = (this->healthPoints*0.25) + 50;
+		this->attackPoints = (this->attackPoints*0.5) + 3;
+		this->numOfAttacks = 0;
+		this->numOfDeffenses = 0;
+		this->level++;
+		std::cout<<"Your heroe just upgraded to next level!: "<<this->level<<std::endl;
+	}
+	
+}
+
+void Heroe::downgradeLevel()
+{
+	if(this->numOfDeffenses == 7 && this->level >= 1)
+	{
+		this->healthPoints = (this->healthPoints*0.25) - 10;
+		this->attackPoints = (this->attackPoints*0.5) - 1;
+		this->numOfAttacks = 0;
+		this->numOfDeffenses = 0;
+		this->level--;
+		std::cout<<"Your heroe just downgraded to prev level: "<<this->level<<std::endl;
+	}
 }

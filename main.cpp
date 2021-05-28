@@ -16,6 +16,22 @@ int main()
 
 	Mage h;
 	h.magicSpellCast();
+	h.attack();
+	h.attack();
+	h.attack();
+	h.attack();
+	h.attack();
+	h.attack();
+	h.attack();
+
+	h.attack();
+	h.attack();
+	h.attack();
+	h.attack();
+	h.attack();
+	h.attack();
+	h.attack();
+	h.addStamina();
 	std::cout<<h;
 
 	return 0;
