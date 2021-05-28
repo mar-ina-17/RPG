@@ -7,8 +7,6 @@ class Mage : public Heroe
 {
 	private:
 		double stamina;
-		int numOfAttacks = 0;
-		int numOfDeffenses = 0;
 
 	public:
 		Mage();
@@ -48,12 +46,20 @@ void Mage::healPotion()
 
 void Mage::magicSpellCast()
 {
-	if(this->stamina >= 0.25)
+	if(this->stamina >= 0.55)
 	{
-		this->stamina -= 0.25;
+		this->stamina -= 0.55;
 		this->increaseAP(1);
 		return;
 	}
 	std::cout<<"The stamina is not enough to cast a magic spell!\n";
+}
+
+void Mage::addStamina()
+{
+	if(this->level >= 2)
+	{
+		this->stamina += (this->level*2.25);
+	}
 }
 #endif
