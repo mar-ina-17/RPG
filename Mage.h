@@ -27,7 +27,7 @@ class Mage : public Heroe
 
 };
 
-Mage::Mage() : Heroe("Mage", 50, 3, 4)
+Mage::Mage() : Heroe("Mage", 50, 3, 4, 'm')
 {
 	this->stamina = 30;
 }

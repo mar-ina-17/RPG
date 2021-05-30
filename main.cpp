@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Field.h"
-#include "Mage.h"
-
+#include "Fighter.h"
+//#include "Archer.h"
 
 //add a class Player 
 
@@ -10,29 +10,13 @@ int main()
 	/*Field f = Field(10, 20);
 	std::cout<<f;/**/
 
-	/*Field f1;
+	Field f1;
 	std::cin>>f1;
-	std::cout<<f1;*/
+	std::cout<<f1;
 
-	Mage h;
-	h.magicSpellCast();
-	h.attack();
-	h.attack();
-	h.attack();
-	h.attack();
-	h.attack();
-	h.attack();
-	h.attack();
+	/*Fighter h = Fighter();
 
-	h.attack();
-	h.attack();
-	h.attack();
-	h.attack();
-	h.attack();
-	h.attack();
-	h.attack();
-	h.addStamina();
-	std::cout<<h;
+	std::cout<<h;*/
 
 	return 0;
 }

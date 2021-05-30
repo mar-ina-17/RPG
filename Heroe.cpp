@@ -1,13 +1,14 @@
 #include "Heroe.h"
 
-Heroe::Heroe() : alias("Test"), healthPoints(10), attackPoints(1), fields(2) {};
+Heroe::Heroe() : alias("Test"), healthPoints(10), attackPoints(1), fields(2), symbol('t') {};
 
-Heroe::Heroe(const char* alias, int hp, int ap, int fields)
+Heroe::Heroe(const char* alias, int hp, int ap, int fields, char symbol) 
 {
 	this->alias = String(alias);
 	this->healthPoints = hp;
 	this->attackPoints = ap;
 	this->fields = fields;
+	this->symbol = symbol;
 }
 
 Heroe::~Heroe()
@@ -23,20 +24,6 @@ void Heroe::increaseAP(int p)
 void Heroe::increaseHP(int p)
 {
 	 this->healthPoints += p;
-}
-
-void Heroe::attack()
-{
-	this->healthPoints -= this->attackPoints;
-	this->numOfAttacks++;
-	this->upgradeLevel();
-}
-
-void Heroe::deffend()
-{
-	this->attackPoints -= (this->healthPoints/15);
-	this->numOfDeffenses++;
-	this->downgradeLevel();
 }
 
 void Heroe::upgradeLevel()
@@ -64,4 +51,24 @@ void Heroe::downgradeLevel()
 		this->level--;
 		std::cout<<"Your heroe just downgraded to prev level: "<<this->level<<std::endl;
 	}
+}
+
+void Heroe::moveLeft(int p)
+{
+	this->position -= p;
+}
+
+void Heroe::moveRight(int p)
+{
+	this->position += p;
+}
+
+void Heroe::moveForward(int p)
+{
+	this->position += 6*p;
+}
+
+void Heroe::moveBackward(int p)
+{
+	this->position -= 6*p;
 }

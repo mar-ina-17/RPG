@@ -27,7 +27,7 @@ public:
 	size_t getSize() const;
 	size_t getCapacity() const;
 
-	void push_back(T&);//& change
+	void push_back(T&);
 
 	bool isEmpty () const;
 

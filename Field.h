@@ -3,6 +3,10 @@
 #include <iostream>
 #include "Vector.h"
 #include "Place.h"
+#include "Mage.h"
+#include "Archer.h"
+#include "Fighter.h"
+#include "Heroe.h"
 
 class Field
 {
@@ -11,13 +15,20 @@ class Field
 		int height;
 		size_t fieldSurface;
 		Vector<Place> fieldPlaces;
+		Vector<Heroe*> myHeroes;
 
 		size_t calcSurface(int w, int h);
+
+		int randomPosition();
+
 		void generatePlaces(size_t face);
+		void generateHeroes();
 
 	public:
 		Field();
 		Field(int w, int h);
+
+		
 
 		friend std::istream& operator>>(std::istream& in, Field& other)
 		{
@@ -38,18 +49,6 @@ class Field
 
 		friend std::ostream& operator<<(std::ostream& out, const Field &other)
 		{
-			//out<<other.fieldSurface<<std::endl;
-
-			// for(size_t i = 0; i < other.width; i++)
-			// {
-			// 	out<<"___";
-			// 	for(size_t j = 0; j < other.height; j++)
-			// 	{
-			// 		out<<"|   |";
-			// 	}
-			// 	out<<std::endl;
-			// }
-
 			out<<other.fieldPlaces;
 
 			return out;

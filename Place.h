@@ -1,12 +1,12 @@
 #ifndef PLACE_H
 #define PLACE_H
+#include "Heroe.h"
 #include <iostream>
 
 class Place
 {
 	private:
 		size_t placeNum;
-		//bool isThereFugure;
 
 	public:
 		Place();
@@ -14,7 +14,7 @@ class Place
 
 		friend std::ostream& operator<<(std::ostream& out, Place other)
 		{
-			out<<"|  |";
+			out<<"|"<<" |";
 			if(other.placeNum % 6 == 0) out<<std::endl;
 			return out;
 		}
